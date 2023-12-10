@@ -302,6 +302,7 @@ if uploaded_file is not None:
     st.write(f'<br>',unsafe_allow_html=True)
 
     if len(recs["spotify_information"]) > 0:
+        counter = 0
 
         with st.expander("See how we generated your recommendations"):
 
@@ -316,9 +317,11 @@ if uploaded_file is not None:
 
             cols = st.columns(num_clusters)
 
-            counter = 0
+            
             for x in recs["spotify_information"]:
                 with cols[counter]:
+
+
                     mood_vector = recs["spotify_information"][x]['mood_vector']
                     danceability = recs["spotify_information"][x]['danceability']
                     acousticness = recs["spotify_information"][x]['acousticness']
