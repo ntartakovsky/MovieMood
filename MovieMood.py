@@ -316,10 +316,10 @@ if uploaded_file is not None:
 
             cols = st.columns(num_clusters)
 
-            i = -1
+            counter = -1
             for x in recs["spotify_information"]:
-                i = i + 1
-                with cols[i]:
+                counter = counter + 1
+                with cols[counter]:
                     mood_vector = recs["spotify_information"][x]['mood_vector']
                     danceability = recs["spotify_information"][x]['danceability']
                     acousticness = recs["spotify_information"][x]['acousticness']
@@ -331,7 +331,7 @@ if uploaded_file is not None:
                     speechiness = recs["spotify_information"][x]['speechiness']
                     tempo = recs["spotify_information"][x]['tempo']
 
-                    st.write(f' <p style="font-size: 1rem;font-weight: 600;background-color: rgb(240, 242, 246);text-align: center;padding: 5px;border: 1px solid gray;"> Cluster #{i+1} </p>',unsafe_allow_html=True)
+                    st.write(f' <p style="font-size: 1rem;font-weight: 600;background-color: rgb(240, 242, 246);text-align: center;padding: 5px;border: 1px solid gray;"> Cluster #{counter+1} </p>',unsafe_allow_html=True)
 
                     st.write(f' <p style="font-size: 0.9rem;font-weight: 600;"> Mood Breakdown: </p>',unsafe_allow_html=True)
                     st.write(f' <p style="font-size: 0.9rem;padding-left: 20px"> Happy: {str(round(mood_vector[0]*100.00, 2))}% </p>',unsafe_allow_html=True)
