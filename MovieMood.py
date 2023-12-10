@@ -197,7 +197,7 @@ if uploaded_file is not None:
 
     with st.expander("See optional filters for movie recommendations"):
         filter_genres = st.multiselect(
-            'What are your preferred movie genres?',
+            'What are your preferred movie genres? (If none are selected, MovieMood will predict your preferred genre)',
             ['Action',
             'Adventure',
             'Animation',
@@ -285,17 +285,17 @@ if uploaded_file is not None:
             movie_string = "movie_" + str(i+1)
 
             with st.expander("More details"):
-                st.write(f' <p style="font-size:0.75rem"> {plot} </p>',unsafe_allow_html=True)
-                st.write(f' <p style="font-size:0.75rem"> Runtime: {runtime} minutes</p>',unsafe_allow_html=True)
-                st.write(f' <p style="font-size:0.75rem"> Rated: {rated} </p>',unsafe_allow_html=True)
-                st.write(f' <p style="font-size:0.75rem"> IMDB Score: {imdb_score} </p>',unsafe_allow_html=True)
+                st.write(f' <p style="font-size:0.75rem"> <b>Plot:</b> {plot} </p>',unsafe_allow_html=True)
+                st.write(f' <p style="font-size:0.75rem"> <b>Runtime:</b> {runtime} minutes</p>',unsafe_allow_html=True)
+                st.write(f' <p style="font-size:0.75rem"> <b>Rated:</b> {rated} </p>',unsafe_allow_html=True)
+                st.write(f' <p style="font-size:0.75rem"> <b>IMDB Score:</b> {imdb_score} </p>',unsafe_allow_html=True)
                 if rotten_score:
-                    st.write(f' <p style="font-size:0.75rem"> Rotten Tomatoes Score: {int(rotten_score)}% </p>',unsafe_allow_html=True)
+                    st.write(f' <p style="font-size:0.75rem"> <b>Rotten Tomatoes Score:</b> {int(rotten_score)}% </p>',unsafe_allow_html=True)
                 else:
-                    st.write(f' <p style="font-size:0.75rem"> Rotten Tomatoes Score: Not Available </p>',unsafe_allow_html=True)
-                st.write(f' <p style="font-size:0.75rem"> Genres: {genres} </p>',unsafe_allow_html=True)
-                st.write(f' <p style="font-size:0.75rem"> Directed by: {director} </p>',unsafe_allow_html=True)
-                st.write(f' <p style="font-size:0.75rem"> Leading Actors: {actors} </p>',unsafe_allow_html=True)
+                    st.write(f' <p style="font-size:0.75rem"> <b>Rotten Tomatoes Score:</b> Not Available </p>',unsafe_allow_html=True)
+                st.write(f' <p style="font-size:0.75rem"> <b>Genres:</b> {genres} </p>',unsafe_allow_html=True)
+                st.write(f' <p style="font-size:0.75rem"> <b>Directed by:</b> {director} </p>',unsafe_allow_html=True)
+                st.write(f' <p style="font-size:0.75rem"> <b>Leading Actors:</b> {actors} </p>',unsafe_allow_html=True)
                 st.link_button("Go to IMDB Page →", imdb_url)
 
 
