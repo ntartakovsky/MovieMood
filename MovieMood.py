@@ -174,7 +174,7 @@ if uploaded_file is not None:
         data['music_list'].append(new_list)
 
     # Define remaining API parameters
-    url = "https://neilprabhu.mids255.com/predict"
+    url = "https://moviemood-api-180820105154.us-west1.run.app/predict"
     headers = {"Content-Type": "application/json"}
 
 
