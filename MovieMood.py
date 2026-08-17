@@ -13,7 +13,7 @@ st.markdown(
         div[data-testid="stLinkButton"] p
         {
             font-size: 0.8rem !important;
-        } 
+        }
 
         div[data-testid="stLinkButton"]
         {
@@ -23,7 +23,7 @@ st.markdown(
         div[data-testid="stButton"]
         {
             text-align: end;
-        } 
+        }
 
         /* Breakpoints for More Details sections below movie posters */
         @media only screen and (min-width: 768px) {
@@ -122,14 +122,14 @@ with col2:
 st.write(f' <p style="font-size:1rem;font-style: italic;"> At MovieMood, we strive to bridge the gap between music and movies, and enrich users\' emotional journeys, to create a uniquely personalized and curated multimedia experience. </p>',unsafe_allow_html=True)
 
 """
-MovieMood uses your Spotify playlist to recommend movies that match your mood. Navigate to the Behind the Scenes page on the left-side menu to learn more about how we generate your recommendations. 
+MovieMood uses your Spotify playlist to recommend movies that match your mood. Navigate to the Behind the Scenes page on the left-side menu to learn more about how we generate your recommendations.
 #
 """
 
 """
 To get your recommendations, you will need to upload a CSV file containing your Spotify playlist details.
 Instructions to retrieve your CSV file:
-1. Navigate to www.exportify.net. 
+1. Navigate to www.exportify.net.
 2. Log in with your Spotify credentials.
 3. Select and download the playlist that you would like to use.
 """
@@ -141,7 +141,7 @@ filter_genres = []
 filter_ratings = []
 filter_imdb_score = 5
 
-    
+
 
 # if 'drop_movies' not in st.session_state:
 #     st.session_state.drop_movies = []
@@ -223,14 +223,14 @@ if uploaded_file is not None:
         filter_ratings = st.multiselect(
             'What are your preferred movie ratings?',
             ['G', 'PG', 'PG-13', 'R', 'Not Rated'])
-    
-        
+
+
         filter_imdb_score = st.radio(
                 "What is your preferred minimum IMDB score?",
                 [5, 6, 7, 8, 9],
                 horizontal=True
             )
-        
+
 
 
 
@@ -256,7 +256,7 @@ if uploaded_file is not None:
 
     col1,col2,col3,col4,col5=st.columns(5)
     cols=[col1,col2,col3,col4,col5]
-    
+
     for i in range(0,len(recs['movies_list'])):
         with cols[i]:
             title = recs['movies_list'][i]['omdb_title']
@@ -280,8 +280,8 @@ if uploaded_file is not None:
 
 
             st.write(f' <p style="font-size: 0.9rem;height: 50px;display: flex;align-items: end;font-weight: 600;"> {title} </p>',unsafe_allow_html=True)
-            cols[i].image(poster, use_column_width="always")
-            
+            cols[i].image(poster, use_container_width=True)
+
             movie_string = "movie_" + str(i+1)
 
             with st.expander("More details"):
@@ -317,7 +317,7 @@ if uploaded_file is not None:
 
             cols = st.columns(num_clusters)
 
-            
+
             for x in recs["spotify_information"]:
                 with cols[counter]:
 
@@ -379,7 +379,7 @@ if uploaded_file is not None:
                         st.write(f' <p style="font-size: 0.9rem;padding-left: 20px"> Medium-High Valence </p>',unsafe_allow_html=True)
                     else:
                         st.write(f' <p style="font-size: 0.9rem;padding-left: 20px"> High Valence </p>',unsafe_allow_html=True)
-                
+
                 counter = counter + 1
 
             st.write(f' <p style="font-size:0.85rem;padding-top:20px;"> MovieMood strictly adheres to a data minimization approach. Only essential listening data is collected to perform the mood-based inference and provide relevant movie recommendations. Moreover, this data is not stored beyond the active session, ensuring that users\' personal information is not retained longer than necessary. Once the session ends, all collected data is promptly discarded, maintaining user privacy and reducing potential data-related risks. </p>',unsafe_allow_html=True)
@@ -389,15 +389,3 @@ if uploaded_file is not None:
     else:
 
         st.write("Sorry, we couldn't find any movies! Adjust your filters and try again for better results.")
-
-
-
-
-
-
-
-
-
-
-
-

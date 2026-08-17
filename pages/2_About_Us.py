@@ -13,11 +13,11 @@ st.markdown(
         div[data-testid="column"]
         {
             text-align: center;
-        } 
+        }
         div[data-testid="stLinkButton"] p
         {
             font-size: 0.9rem !important;
-        } 
+        }
         div[data-testid="stVerticalBlock"] div[data-testid="stHorizontalBlock"]:nth-of-type(2) div[data-testid="column"] {
             text-align: left;
         }
@@ -39,11 +39,11 @@ with col2:
     st.image("images/logo.jpg")
 
 """
-We are a group of grad students at UC Berkeley in the Master of Information and Data Science (MIDS) program. 
+We are a group of grad students at UC Berkeley in the Master of Information and Data Science (MIDS) program.
 
-MovieMood was founded as part of our capstone class, where we had to develop a data science application, of our choice, from the ground up. 
+MovieMood was founded as part of our capstone class, where we had to develop a data science application, of our choice, from the ground up.
 
-Our team has a wide/diverse background ranging from data engineering / science to software engineering and UX design. 
+Our team has a wide/diverse background ranging from data engineering / science to software engineering and UX design.
 """
 
 st.write(f'<br><br>',unsafe_allow_html=True)
@@ -59,8 +59,8 @@ member_links = ['https://www.linkedin.com/in/neta-tartakovsky/',
                 'https://www.linkedin.com/in/neil-prabhu-9413b1ba/',
                 'https://www.linkedin.com/in/will-dudek/']
 
-for i in range(0,5):    
+for i in range(0,5):
     with cols[i]:
-        st.image('images/'+member_photos[i], use_column_width="always")
+        st.image('images/'+member_photos[i], use_container_width=True)
         st.write(f' <p style="font-size: 1.1rem;font-weight: 600;"> {member_names[i]} </p>',unsafe_allow_html=True)
         st.link_button("LinkedIn →", member_links[i])
